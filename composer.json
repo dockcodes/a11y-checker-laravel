@@ -1,0 +1,34 @@
+{
+    "name": "dockcodes/a11y-checker-laravel",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "email": "j.labudda@dock.codes",
+            "name": "Jacek Labudda",
+            "homepage": "https://wcag.dock.codes"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "dockcodes/a11y-checker": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0|^8.0|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dock\\A11yCheckerLaravel\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dock\\A11yCheckerLaravel\\DockServiceProvider"
+            ],
+            "aliases": {
+                "A11yChecker": "Dock\\A11yCheckerLaravel\\Facades\\A11yChecker"
+            }
+        }
+    }
+}
