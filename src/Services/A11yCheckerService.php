@@ -126,18 +126,6 @@ class A11yCheckerService implements A11yCheckerServiceContract
     }
 
     /**
-     * @param string $uuid
-     * @param bool|null $monitoring
-     * @param bool|null $notifications
-     * @return array
-     * @throws GuzzleException
-     */
-    public function historyUpdate(string $uuid, ?bool $monitoring = null, ?bool $notifications = null): array
-    {
-        return $this->client()->historyUpdate($uuid, $monitoring, $notifications);
-    }
-
-    /**
      * @param string $key
      * @return $this
      */

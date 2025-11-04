@@ -92,15 +92,6 @@ interface A11yCheckerServiceContract
     public function updateAuditManual(string $uuid, string $criterionId, AuditStatus $status, Device $device = Device::DESKTOP): array;
 
     /**
-     * @param string $uuid
-     * @param bool|null $monitoring
-     * @param bool|null $notifications
-     * @return array
-     * @throws GuzzleException
-     */
-    public function historyUpdate(string $uuid, ?bool $monitoring = null, ?bool $notifications = null): array;
-
-    /**
      * @param string $key
      * @return $this
      */
