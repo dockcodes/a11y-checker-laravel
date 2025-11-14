@@ -35,7 +35,8 @@ $report = \A11yChecker::audit($result['uuid']);
 print_r($report['response']);
 
 // Get history
-$history = \A11yChecker::history($result['address_uuid']);
+use Dock\A11yChecker\Dtos\HistoryFilters;
+$history = \A11yChecker::history($result['address_uuid'], filters: HistoryFilters::from(date_from: '01-01-2000'));
 print_r($history['response']);
 ```
 
@@ -53,10 +54,10 @@ user()
 
 deleteAudit(string $uuid)
 
-history(string $uuid, int $page = 1, int $perPage = 10, Sort $sort = Sort::CREATED_AT_ASC)
+history(string $uuid, int $page = 1, int $perPage = 10, Sort $sort = Sort::CREATED_AT_ASC, ?HistoryFilters $filters = null)
 
 deleteHistory(string $uuid)
 
-updateAuditManual(string $uuid, string $criterionId, AuditStatus $status, Device $device));
+updateAuditManual(string $uuid, string $criterionId, AuditStatus $status, Device $device)
 ```
 To obtain an API key, please contact us via the [contact form](https://wcag.dock.codes/contact-us/).

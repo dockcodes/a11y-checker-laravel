@@ -2,6 +2,7 @@
 
 namespace Dock\A11yCheckerLaravel\Services\Contracts;
 
+use Dock\A11yChecker\Dtos\HistoryFilters;
 use Dock\A11yChecker\Enums\AuditStatus;
 use Dock\A11yChecker\Enums\Device;
 use Dock\A11yChecker\Enums\Language;
@@ -56,10 +57,11 @@ interface A11yCheckerServiceContract
      * @param int $page
      * @param int $perPage
      * @param Sort $sort
+     * @param ?HistoryFilters $filters
      * @return array
      * @throws GuzzleException
      */
-    public function history(string $uuid, int $page = 1, int $perPage = 10, Sort $sort = Sort::CREATED_AT_ASC): array;
+    public function history(string $uuid, int $page = 1, int $perPage = 10, Sort $sort = Sort::CREATED_AT_ASC, ?HistoryFilters $filters = null): array;
 
     /**
      * @return array

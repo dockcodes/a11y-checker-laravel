@@ -3,6 +3,7 @@
 namespace Dock\A11yCheckerLaravel\Services;
 
 use Dock\A11yChecker\Client;
+use Dock\A11yChecker\Dtos\HistoryFilters;
 use Dock\A11yChecker\Enums\AuditStatus;
 use Dock\A11yChecker\Enums\Device;
 use Dock\A11yChecker\Enums\Language;
@@ -75,12 +76,13 @@ class A11yCheckerService implements A11yCheckerServiceContract
      * @param int $page
      * @param int $perPage
      * @param Sort $sort
+     * @param ?HistoryFilters $filters
      * @return array
      * @throws GuzzleException
      */
-    public function history(string $uuid, int $page = 1, int $perPage = 10, Sort $sort = Sort::CREATED_AT_ASC): array
+    public function history(string $uuid, int $page = 1, int $perPage = 10, Sort $sort = Sort::CREATED_AT_ASC, ?HistoryFilters $filters = null): array
     {
-        return $this->client()->history($uuid, $page, $perPage, $sort);
+        return $this->client()->history($uuid, $page, $perPage, $sort, $filters);
     }
 
     /**
