@@ -15,7 +15,7 @@ interface A11yCheckerServiceContract
      * @param string $url
      * @param Language $lang
      * @param Device $device
-     * @param bool $sync
+     * @param bool $sync deprecated - every scan is asynchronous; only false is accepted (true throws)
      * @param bool $extraData
      * @return array
      * @throws GuzzleException
@@ -25,7 +25,7 @@ interface A11yCheckerServiceContract
     /**
      * @param string $uuid
      * @param Language $lang
-     * @param bool $sync
+     * @param bool $sync deprecated - every scan is asynchronous; only false is accepted (true throws)
      * @param bool $extraData
      * @return array
      * @throws GuzzleException

@@ -42,6 +42,7 @@ print_r($history['response']);
 
 ### Method parameters
 ```php
+// Every scan is asynchronous: scan() queues the audit, audit($uuid) reads its result. $sync is deprecated (only false).
 scan(string $url, Language $lang = Language::EN, Device $device = Device::DESKTOP, bool $sync = false, bool $extraData = false, ?string $uniqueKey = null)
 
 rescan(string $uuid, Language $lang = Language::EN, bool $sync = false, bool $extraData = false)
